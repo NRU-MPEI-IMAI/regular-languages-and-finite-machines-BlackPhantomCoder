@@ -1,0 +1,31 @@
+digraph name {
+node [shape=circle]
+"<s1,q1>"
+"<s2,q3>"
+"<s1,q2>"
+"<s2,q2>"
+"<s1,q3>"
+"<s2,q1>"
+"<s3,q1>"[shape = doublecircle]
+"<s3,q2>"[shape = doublecircle]
+"<s3,q3>"
+start[label = "", shape = none]
+start -> "<s1,q1>"
+"<s1,q1>"->"<s1,q2>"[label="a"]
+"<s1,q1>"->"<s2,q1>"[label="b"]
+"<s2,q3>"->"<s2,q3>"[label="a"]
+"<s2,q3>"->"<s3,q3>"[label="b"]
+"<s1,q2>"->"<s2,q2>"[label="b"]
+"<s1,q2>"->"<s1,q3>"[label="a"]
+"<s2,q2>"->"<s2,q3>"[label="a"]
+"<s2,q2>"->"<s3,q2>"[label="b"]
+"<s1,q3>"->"<s1,q3>"[label="a"]
+"<s1,q3>"->"<s2,q3>"[label="b"]
+"<s2,q1>"->"<s2,q2>"[label="a"]
+"<s2,q1>"->"<s3,q1>"[label="b"]
+"<s3,q1>"->"<s3,q2>"[label="a"]
+"<s3,q1>"->"<s3,q1>"[label="b"]
+"<s3,q2>"->"<s3,q3>"[label="a"]
+"<s3,q2>"->"<s3,q2>"[label="b"]
+"<s3,q3>"->"<s3,q3>"[label="a,b"]
+}
