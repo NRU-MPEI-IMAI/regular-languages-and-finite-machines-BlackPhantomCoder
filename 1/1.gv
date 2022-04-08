@@ -1,0 +1,16 @@
+digraph name {
+    node [shape=circle]
+    rankdir=LR
+
+    label="1.1"
+
+    qstart [label="", shape = none]
+    qstart->q1
+
+
+    q1->q1  [label="a,b"]
+    q1->q2  [label=c]
+    q2->q2  [label="a,b"]
+
+    q2[shape=doublecircle]
+}

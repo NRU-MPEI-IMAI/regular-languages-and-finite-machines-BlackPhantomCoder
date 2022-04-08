@@ -1,0 +1,52 @@
+digraph name {
+    label = "2.2";
+    node [shape=circle]
+    //1
+    subgraph cluster_Q {
+        label="Первый автомат"
+        { rank=same; qstart  q1};
+
+        qstart  [label="", shape = none]
+        qstart->q1
+        q1->q2  [label="a,b"]
+        q2->q3  [label="a,b"]
+        q3->q4  [label="a,b"]
+        q4->q4  [label="a,b"]
+        q4[shape=doublecircle]
+        
+    }
+
+    //2
+    subgraph cluster_S  {
+        label="Второй автомат"
+        { rank=same; sstart  s1};
+
+        sstart  [label="", shape = none]
+        sstart->s1
+        s1->s2  [label="a,b"]
+        s2->s1  [label="a,b"]
+
+        s2[shape=doublecircle]
+    }
+
+    subgraph cluster_QS {
+        label="Прямое произведение"
+        { rank=same; start  "f 1|1"};
+        start  [label="", shape = none]
+        start -> "f 1|1"
+
+
+        "f 1|1" -> "f 2|2" [label="a,b"]
+        "f 1|2" -> "f 2|1" [label="a,b"]
+        "f 2|1" -> "f 3|2" [label="a,b"]
+        "f 2|2" -> "f 3|1" [label="a,b"]
+        "f 3|1" -> "f 4|2" [label="a,b"]
+        "f 3|2" -> "f 4|1" [label="a,b"]
+        "f 4|1" -> "f 4|2" [label="a,b"]
+        "f 4|2" -> "f 4|1" [label="a,b"]
+
+
+        "f 4|2"[shape=doublecircle]
+    }
+
+}

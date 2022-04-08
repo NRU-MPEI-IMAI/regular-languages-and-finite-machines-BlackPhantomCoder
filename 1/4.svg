@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130pt" height="82pt" viewBox="0.00 0.00 129.69 82.19">
+<g id="graph0" class="graph" transform="translate(4,78.19000244140625) scale(1)" data-name="name">
+
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-78.19 125.69,-78.19 125.69,4 -4,4" style=""/>
+<text text-anchor="middle" x="60.85" y="-8.2" font-family="Times,serif" font-size="14.00" style="">1.4</text>
+<!-- qstart -->
+<g id="node1" class="node" pointer-events="visible" data-name="qstart">
+
+</g>
+<!-- q1 -->
+<g id="node2" class="node" pointer-events="visible" data-name="q1">
+
+<ellipse fill="none" stroke="black" cx="97" cy="-49.49" rx="20.86" ry="20.86" style=""/>
+<ellipse fill="none" stroke="black" cx="97" cy="-49.49" rx="24.89" ry="24.89" style=""/>
+<text text-anchor="middle" x="97" y="-45.29" font-family="Times,serif" font-size="14.00" style="">q1</text>
+</g>
+<!-- qstart&#45;&gt;q1 -->
+<g id="edge1" class="edge" data-name="qstart-&gt;q1">
+
+<path fill="none" stroke="black" d="M54.07,-49.49C56.71,-49.49 59.35,-49.49 61.99,-49.49" style=""/>
+<polygon fill="black" stroke="black" points="62.18,-52.99 72.18,-49.49 62.18,-45.99 62.18,-52.99" style=""/>
+</g>
+</g>
+</svg>

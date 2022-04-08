@@ -1,1 +1,6 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7562948&assignment_repo_type=AssignmentRepo)
+# Домашнее задание
+
+### Шевцов А-13а-19
+
+[**homework.md**](./homework.md), [**homework.pdf**](./homework.pdf) - файлы с домашним заданием  
+Папки **1**, **2**, **3**, **4**, **5** - решения (картинки, .gv + программа).

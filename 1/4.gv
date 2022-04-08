@@ -1,0 +1,10 @@
+digraph name {
+    label="1.4"
+
+    qstart  [label="", shape = none]
+    qstart->q1
+
+    { rank=same; qstart q1};
+
+    q1[shape=doublecircle]
+}

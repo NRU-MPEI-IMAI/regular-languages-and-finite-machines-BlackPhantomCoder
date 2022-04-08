@@ -1,0 +1,171 @@
+digraph name {
+    label = "2.5";
+    node [shape=circle]
+
+    subgraph cluster_S {
+        { rank=same; sstart  "s1"};
+        label = "Первый автомат";
+
+        sstart  [label="", shape = none]
+        sstart ->  "s1"
+
+        "s1"->"s4" [label="a"]
+        "s2"->"s5" [label="a"]
+        "s3"->"s6" [label="a"]
+        "s4"->"s1" [label="a"]
+        "s5"->"s2" [label="a"]
+        "s6"->"s3" [label="a"]
+
+
+        "s1"->"s2" [label="b"]
+        "s2"->"s3" [label="b"]
+        "s3"->"s1" [label="b"]
+        "s4"->"s5" [label="b"]
+        "s5"->"s6" [label="b"]
+        "s6"->"s4" [label="b"]
+
+
+        "s2" [shape=doublecircle]
+        "s3" [shape=doublecircle]
+        "s4" [shape=doublecircle]
+        "s5" [shape=doublecircle]
+        "s6" [shape=doublecircle]
+    }
+
+
+    subgraph cluster_Q {
+        { rank=same; qstart  "q1"};
+        label = "Второй автомат";
+
+        qstart  [label="", shape = none]
+        qstart -> "q1"
+
+        "q1" -> "q4" [label="a,b"]
+        "q2" -> "q3" [label="a,b"]
+        "q3" -> "q6" [label="a,b"]
+        "q4" -> "q5" [label="a,b"]
+        "q5" -> "q8" [label="a,b"]
+        "q6" -> "q7" [label="a,b"]
+        "q7" -> "q8" [label="a,b"]
+        "q8" -> "q7" [label="a,b"]
+
+
+        "q8" [shape=doublecircle]
+    }
+
+
+    subgraph cluster_QS {
+        label="Прямое произведение"
+        { rank=same; start  "f 1|1"};
+
+
+        start  [label="", shape = none]
+        start ->  "f 1|1"
+
+        "f 1|2"  -> "f 4|5" [label="a"] 
+        "f 1|1"  -> "f 4|4" [label="a"] 
+        "f 1|3"  -> "f 4|6" [label="a"] 
+        "f 1|4"  -> "f 4|1" [label="a"] 
+        "f 1|5"  -> "f 4|2" [label="a"] 
+        "f 1|6"  -> "f 4|3" [label="a"] 
+        "f 2|1"  -> "f 3|4" [label="a"] 
+        "f 2|2"  -> "f 3|5" [label="a"] 
+        "f 2|3"  -> "f 3|6" [label="a"] 
+        "f 2|4"  -> "f 3|1" [label="a"] 
+        "f 2|5"  -> "f 3|2" [label="a"] 
+        "f 2|6"  -> "f 3|3" [label="a"] 
+        "f 3|1"  -> "f 6|4" [label="a"] 
+        "f 3|2"  -> "f 6|5" [label="a"] 
+        "f 3|3"  -> "f 6|6" [label="a"] 
+        "f 3|4"  -> "f 6|1" [label="a"] 
+        "f 3|5"  -> "f 6|2" [label="a"] 
+        "f 3|6"  -> "f 6|3" [label="a"] 
+        "f 4|1"  -> "f 5|4" [label="a"] 
+        "f 4|2"  -> "f 5|5" [label="a"] 
+        "f 4|3"  -> "f 5|6" [label="a"] 
+        "f 4|4"  -> "f 5|1" [label="a"] 
+        "f 4|5"  -> "f 5|2" [label="a"] 
+        "f 4|6"  -> "f 5|3" [label="a"] 
+        "f 5|1"  -> "f 8|4" [label="a"] 
+        "f 5|2"  -> "f 8|5" [label="a"] 
+        "f 5|3"  -> "f 8|6" [label="a"] 
+        "f 5|4"  -> "f 8|1" [label="a"] 
+        "f 5|5"  -> "f 8|2" [label="a"] 
+        "f 5|6"  -> "f 8|3" [label="a"] 
+        "f 6|1"  -> "f 7|4" [label="a"] 
+        "f 6|2"  -> "f 7|5" [label="a"] 
+        "f 6|3"  -> "f 7|6" [label="a"] 
+        "f 6|4"  -> "f 7|1" [label="a"] 
+        "f 6|5"  -> "f 7|2" [label="a"] 
+        "f 6|6"  -> "f 7|3" [label="a"] 
+        "f 7|1"  -> "f 8|4" [label="a"] 
+        "f 7|2"  -> "f 8|5" [label="a"] 
+        "f 7|3"  -> "f 8|6" [label="a"] 
+        "f 7|4"  -> "f 8|1" [label="a"] 
+        "f 7|5"  -> "f 8|2" [label="a"] 
+        "f 7|6"  -> "f 8|3" [label="a"] 
+        "f 8|1"  -> "f 7|4" [label="a"] 
+        "f 8|2"  -> "f 7|5" [label="a"] 
+        "f 8|3"  -> "f 7|6" [label="a"] 
+        "f 8|4"  -> "f 7|1" [label="a"] 
+        "f 8|5"  -> "f 7|2" [label="a"] 
+        "f 8|6"  -> "f 7|3" [label="a"] 
+
+        "f 1|2"  -> "f 4|3" [label="b"]
+        "f 1|1"  -> "f 4|2" [label="b"]
+        "f 1|3"  -> "f 4|1" [label="b"]
+        "f 1|4"  -> "f 4|5" [label="b"]
+        "f 1|5"  -> "f 4|6" [label="b"]
+        "f 1|6"  -> "f 4|4" [label="b"]
+        "f 2|1"  -> "f 3|2" [label="b"]
+        "f 2|2"  -> "f 3|3" [label="b"]
+        "f 2|3"  -> "f 3|1" [label="b"]
+        "f 2|4"  -> "f 3|5" [label="b"]
+        "f 2|5"  -> "f 3|6" [label="b"]
+        "f 2|6"  -> "f 3|4" [label="b"]
+        "f 3|1"  -> "f 6|2" [label="b"]
+        "f 3|2"  -> "f 6|3" [label="b"]
+        "f 3|3"  -> "f 6|1" [label="b"]
+        "f 3|4"  -> "f 6|5" [label="b"]
+        "f 3|5"  -> "f 6|6" [label="b"]
+        "f 3|6"  -> "f 6|4" [label="b"]
+        "f 4|1"  -> "f 5|2" [label="b"]
+        "f 4|2"  -> "f 5|3" [label="b"]
+        "f 4|3"  -> "f 5|1" [label="b"]
+        "f 4|4"  -> "f 5|5" [label="b"]
+        "f 4|5"  -> "f 5|6" [label="b"]
+        "f 4|6"  -> "f 5|4" [label="b"]
+        "f 5|1"  -> "f 8|2" [label="b"]
+        "f 5|2"  -> "f 8|3" [label="b"]
+        "f 5|3"  -> "f 8|1" [label="b"]
+        "f 5|4"  -> "f 8|5" [label="b"]
+        "f 5|5"  -> "f 8|6" [label="b"]
+        "f 5|6"  -> "f 8|4" [label="b"]
+        "f 6|1"  -> "f 7|2" [label="b"]
+        "f 6|2"  -> "f 7|3" [label="b"]
+        "f 6|3"  -> "f 7|1" [label="b"]
+        "f 6|4"  -> "f 7|5" [label="b"]
+        "f 6|5"  -> "f 7|6" [label="b"]
+        "f 6|6"  -> "f 7|4" [label="b"]
+        "f 7|1"  -> "f 8|2" [label="b"]
+        "f 7|2"  -> "f 8|3" [label="b"]
+        "f 7|3"  -> "f 8|1" [label="b"]
+        "f 7|4"  -> "f 8|5" [label="b"]
+        "f 7|5"  -> "f 8|6" [label="b"]
+        "f 7|6"  -> "f 8|4" [label="b"]
+        "f 8|1"  -> "f 7|2" [label="b"]
+        "f 8|2"  -> "f 7|3" [label="b"]
+        "f 8|3"  -> "f 7|1" [label="b"]
+        "f 8|4"  -> "f 7|5" [label="b"]
+        "f 8|5"  -> "f 7|6" [label="b"]
+        "f 8|6"  -> "f 7|4" [label="b"]
+
+
+        "f 8|2"[shape=doublecircle]
+        "f 8|3"[shape=doublecircle]
+        "f 8|4"[shape=doublecircle]
+        "f 8|5"[shape=doublecircle]
+        "f 8|6"[shape=doublecircle]
+    }
+
+}

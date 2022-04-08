@@ -1,0 +1,110 @@
+digraph name {
+    label = "3.1";
+    rankdir=LR
+    node [shape=circle]
+    //1
+    subgraph cluster_1 {
+        label="НКА с lambda"
+        { rank=same; "1_start" "1_1"};
+
+        "1_start"  [label="", shape = none]
+        "1_start"->"1_1"
+
+        "1_1" [label="1"]
+        "1_2" [label="2"]
+        "1_3" [label="3"]
+        "1_4" [label="4"]
+        "1_5" [label="5"]
+        "1_6" [label="6"]
+        "1_7" [label="7"]
+        "1_8" [label="8"]
+        "1_9" [label="9"]
+        "1_10" [label="10"]
+        "1_11"[label="11"]
+        "1_12" [label="12"]
+        "1_13"[label="13"]
+        "1_14" [label="14"]
+        "1_15"[label="15"]
+
+
+        "1_1"->"1_2" [label="lambda"]
+
+        "1_2"->"1_10" [label="lambda"]
+        "1_2"->"1_3" [label="lambda"]
+
+        "1_3"->"1_4" [label="a"]
+        "1_4"->"1_5" [label="lambda"]
+        "1_4"->"1_8" [label="lambda"]
+
+        "1_5"->"1_6" [label="a"]
+        "1_6"->"1_7" [label="b"]
+        "1_7"->"1_5" [label="lambda"]
+        "1_7"->"1_8" [label="lambda"]
+
+        "1_8"->"1_9" [label="b"]
+        "1_9"->"1_3" [label="lambda"]
+        "1_9"->"1_10" [label="lambda"]
+        "1_10"->"1_11" [label="lambda"]
+
+        "1_11"->"1_12" [label="lambda"]
+        "1_11"->"1_15" [label="lambda"]
+        "1_12"->"1_13" [label="a"]
+        "1_13"->"1_14" [label="b"]
+        "1_14"->"1_12" [label="lambda"]
+        "1_14"->"1_15" [label="lambda"]
+
+
+        "1_15"[shape=doublecircle]
+    }
+   
+       //2
+    subgraph cluster_2 {
+        label="НКА"
+        { rank=same; "2_start" "2_1"};
+
+        "2_start"  [label="", shape = none]
+        "2_start"->"2_1"
+
+        "2_1" [label="1"]
+        "2_2" [label="2"]
+        "2_3" [label="3"]
+        "2_4" [label="4"]
+        "2_5" [label="5"]
+
+        "2_1"->"2_2" [label="a"]
+        "2_2"->"2_4" [label="a"]
+        "2_2"->"2_3" [label="a"]
+
+        "2_3"->"2_2" [label="b"]
+        "2_4"->"2_2" [label="b"]
+
+        "2_4"->"2_5" [label="a"]
+        "2_5"->"2_4" [label="b"]
+
+        "2_2"[shape=doublecircle]
+    }
+
+        //3
+    subgraph cluster_3 {
+        label="ДКА"
+        { rank=same; "3_start" "3_1"};
+
+        "3_start"  [label="", shape = none]
+        "3_start"->"3_1"
+
+        "3_1" [label="1"]
+        "3_2" [label="2"]
+        "3_4" [label="4,3"]
+        "3_5" [label="5"]
+
+        "3_1"->"3_2" [label="a"]
+        "3_2"->"3_4" [label="a"]
+
+        "3_4"->"3_2" [label="b"]
+
+        "3_4"->"3_5" [label="a"]
+        "3_5"->"3_4" [label="b"]
+
+        "3_2"[shape=doublecircle]
+    }
+}

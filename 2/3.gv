@@ -1,0 +1,64 @@
+digraph name {
+    label = "2.3";
+    node [shape=circle]
+    //1
+    subgraph cluster_Q {
+        label="Первый автомат"
+        { rank=same; qstart q1};
+
+        qstart [label="", shape = none]
+        qstart->q1
+        q1->q2  [label="a"]
+        q2->q1  [label="a"]
+
+        q1->q1  [label="b"]
+        q2->q2  [label="b"]
+        q1[shape=doublecircle]
+        
+    }
+
+    //2
+    subgraph cluster_S  {
+        label="Второй автомат"
+        { rank=same; sstart s1};
+
+
+        sstart  [label="", shape = none]
+        sstart->s1
+        s1->s2  [label="b"]
+        s2->s3  [label="b"]
+        s3->s1  [label="b"]
+
+        s1->s1  [label="a"]
+        s2->s2  [label="a"]
+        s3->s3  [label="a"]
+        s1[shape=doublecircle]
+    }
+
+    subgraph cluster_QS {
+        label="Прямое произведение"
+        { rank=same; start  "f 1|1"};
+
+
+        start  [label="", shape = none]
+        start ->  "f 1|1"
+
+        "f 1|1" -> "f 2|1" [label="a"]
+        "f 1|2" -> "f 2|2" [label="a"]
+        "f 1|3" -> "f 2|3" [label="a"]
+        "f 2|1" -> "f 1|1" [label="a"]
+        "f 2|2" -> "f 1|2" [label="a"]
+        "f 2|3" -> "f 1|3" [label="a"]
+
+        "f 1|1" -> "f 1|2" [label="b"]
+        "f 1|2" -> "f 1|3" [label="b"]
+        "f 1|3" -> "f 1|1" [label="b"]
+        "f 2|1" -> "f 2|2" [label="b"]
+        "f 2|2" -> "f 2|3" [label="b"]
+        "f 2|3" -> "f 2|1" [label="b"]
+
+
+        "f 1|1"[shape=doublecircle]
+    }
+
+}
